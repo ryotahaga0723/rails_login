@@ -3,6 +3,11 @@ ja:
     models:
       task: タスク
     attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワードとパスワード（確認）
       task:
         title: タイトル
         content: 内容
@@ -10,6 +15,10 @@ ja:
     format: "%{attribute}%{message}"
     messages:
       blank: を入力してください
+      too_short: は%{count}文字以上で入力してください
+      invalid: は不正な値です
+      taken: はすでに使用されています
+      confirmation: の入力が一致しません
   helpers:
     submit:
       create: 登録する
@@ -36,3 +45,4 @@ ja:
       updated: タスクを更新しました
     destroy:
       destroyed: タスクを削除しました
+  
