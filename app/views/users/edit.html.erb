@@ -20,5 +20,7 @@
     <%= f.label :パスワード（確認） %>
     <%= f.password_field :password_confirmation %>
     <%= f.submit "更新する" %>
-    <%= link_to "戻る", :back %>
+    <div id = "back">
+    <%= link_to "戻る", user_path %>
+    </div>
   <% end %>
