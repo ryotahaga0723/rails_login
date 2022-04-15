@@ -12,15 +12,27 @@
   <body>
     <% if logged_in? %>
       <ul>
-        <li><%= link_to "タスク一覧", tasks_path(current_user.id) %></li>
-        <li><%= link_to "タスクを登録する", new_task_path(current_user.id) %></li>
-        <li><%= link_to "アカウント", user_path(current_user.id) %></li>
-        <li><%= link_to "ログアウト", new_session_path(current_user.id), method: :delete %></li>
+        <div id ="tasks-index">
+          <li><%= link_to "タスク一覧", tasks_path(current_user.id) %></li>
+        </div>
+        <div id ="new-task">
+          <li><%= link_to "タスクを登録する", new_task_path(current_user.id) %></li>
+        </div>
+        <div id ="my-account">
+          <li><%= link_to "アカウント", user_path(current_user.id) %></li>
+        </div>
+        <div id ="sign-out">
+          <li><%= link_to "ログアウト", new_session_path(current_user.id), method: :delete %></li>
+        </div>
       </ul>
     <% else %>
       <ul>
-        <li><%= link_to "アカウント登録", new_user_path %></li>
-        <li><%= link_to "ログイン", tasks_path %></li>
+        <div id ="sign-up">
+          <li><%= link_to "アカウント登録", new_user_path %></li>
+        </div>
+        <div id ="sign-in">
+          <li><%= link_to "ログイン", tasks_path %></li>
+        </div>
       </ul>
     <% end %>
     <% flash.each do |key, value| %>
